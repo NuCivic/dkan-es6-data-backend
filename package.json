@@ -4,7 +4,7 @@
   "description": "Backend for consume dkan resources",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start --single-run --no-auto-watch karma.config.js",
-    "build": "./node_modules/.bin/webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
     "lint": "eslint src"
   },
   "repository": {

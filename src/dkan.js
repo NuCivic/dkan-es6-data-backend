@@ -91,7 +91,7 @@ DKAN.query = (queryObj, dataset) => {
 };
 
 DKAN._parseCkanResourceUrl = function(url) {
-  parts = url.split('/');
+  let parts = url.split('/');
   let len = parts.length;
   return {
     resource_id: parts[len-1],
@@ -109,7 +109,7 @@ class DataStore {
     var filters = '';
     if (data.filters) {
       for (var filter in data.filters) {
-        filters = '&filters[' + filter + ']=' + data.filters[filter];
+        filters += '&filters[' + filter + ']=' + data.filters[filter];
       }
     }
     var searchUrl = this.endpoint + '/3/action/datastore_search?=' + this._objToQuery(data) + filters;
